@@ -4254,15 +4254,13 @@ function bu(e, t, n, s, r, o) {
     }), B("div", Yc, [B("button", {
         class: "bg-sky-500 rounded text-white px-2 text-sm",
         onClick: t[4] || (t[4] = d=>{
-            this.form.distance = "5000+",
-            this.form.disclosure = "\u0410\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E"
+            this.form.distance = "5000+"
         }
         )
     }, " 5+ \u043A\u043C, \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E "), B("button", {
         class: "bg-sky-500 rounded text-white px-2 text-sm",
         onClick: t[5] || (t[5] = d=>{
-            this.form.distance = "10000+",
-            this.form.disclosure = "\u0410\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E"
+            this.form.distance = "10000+"
         }
         )
     }, " 10+ \u043A\u043C ")])]), F(c, {
