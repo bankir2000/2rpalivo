@@ -4400,7 +4400,7 @@ function bu(e, t, n, s, r, o) {
         class: "flex items-center py-1"
     }, [F(f, {
         checked: r.form.strichka,
-        "onUpdate:checked": t[19] || (t[19] = _=>r.form.strichka = _),
+        "onUpdate:checked": t[32] || (t[32] = _=>r.form.strichka = _),
         name: "strichka",
         value: d
     }, null, 8, ["checked", "value"]), 
