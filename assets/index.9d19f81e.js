@@ -4391,19 +4391,29 @@ function bu(e, t, n, s, r, o) {
     G("div", gu, [
     // Поле для введення значення розходу боєприпасів
         F(l, {
-        for: "strichka",
-        value: "Вибір кулеметної стрічки, тільки для Victor:"
-    }), B("div", fu, [(Y(!0),
-    G(de, null, cn(r.strichka, (d,p)=>(Y(),
-    G("label", {
-        key: p,
-        class: "flex items-center py-1"
-    }, [F(f, {
-        checked: r.form.strichka,
-        "onUpdate:checked": t[32] || (t[32] = _=>r.form.strichka = _),
-        name: "strichka",
-        value: d
-    }, null, 8, ["checked", "value"]),
+    for: "strichka",
+    value: "Вибір кулеметної стрічки, тільки для Victor"
+}),
+B("div", {
+    class: "grid grid-cols-3"
+}, [
+    ["1-3", "1-2", "1-1-2"].map((val, idx) =>
+        B("label", {
+            key: idx,
+            class: "flex items-center py-1"
+        }, [
+            F(f, {
+                checked: r.form.strichka,
+                "onUpdate:checked": t[35 + idx] || (t[35 + idx] = _ => r.form.strichka = _),
+                name: "strichka",
+                value: val
+            }, null, 8, ["checked", "value"]),
+            B("span", {
+                class: "ml-2 text-sm text-gray-600 dark:text-gray-400"
+            }, val)
+        ])
+    )
+])
         // кінець
     F(l, {
         for: "ammunition_consumption"
