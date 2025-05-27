@@ -3838,7 +3838,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 number_of_targets: null,
                 target_action: null,
                 tcil: null,
-                strichka: [],
+                strichka: null,
                 ammunition_consumption: null,
                 ak_ammunition_consumption: null,
                 dshk_ammunition_consumption: null,
@@ -4390,30 +4390,7 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
     G("div", gu, [
     // Поле для введення значення розходу боєприпасів
-        F(l, {
-    for: "strichka",
-    value: "Вибір кулеметної стрічки, тільки для Victor"
-}),
-B("div", {
-    class: "grid grid-cols-3"
-}, [
-    ["1-3", "1-2", "1-1-2"].map((val, idx) =>
-        B("label", {
-            key: idx,
-            class: "flex items-center py-1"
-        }, [
-            F(f, {
-                checked: r.form.strichka,
-                "onUpdate:checked": t[35 + idx] || (t[35 + idx] = _ => r.form.strichka = _),
-                name: "strichka",
-                value: val
-            }, null, 8, ["checked", "value"]),
-            B("span", {
-                class: "ml-2 text-sm text-gray-600 dark:text-gray-400"
-            }, val)
-        ])
-    )
-])
+        
         // кінець
     F(l, {
         for: "ammunition_consumption"
