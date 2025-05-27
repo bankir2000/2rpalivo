@@ -3838,7 +3838,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 number_of_targets: null,
                 target_action: null,
                 tcil: null,
-                strichka: null,
+                strichka: [],
                 ammunition_consumption: null,
                 ak_ammunition_consumption: null,
                 dshk_ammunition_consumption: null,
