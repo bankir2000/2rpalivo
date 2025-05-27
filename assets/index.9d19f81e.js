@@ -4390,21 +4390,7 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
     G("div", gu, [
     // Поле для введення значення розходу боєприпасів
-       F(l, {
-        for: "strichka",
-        value: "Вибір кулеметної стрічки для Victor:"
-    }), B("div", fu, [(Y(!0),
-    G(de, null, cn(r.strichka, (d,p)=>(Y(),
-    G("label", {
-        key: p,
-        class: "flex items-center py-1"
-    }, [F(f, {
-        checked: r.form.strichka,
-        "onUpdate:checked": t[35] || (t[35] = _=>r.form.strichka = _),
-        name: "strichka",
-        value: d
-    }, null, 8, ["checked", "value"]), B("span", au, We(d), 1)]))), 128))])]), 
-        // кінець
+       
     F(l, {
         for: "ammunition_consumption"
     }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм"),
