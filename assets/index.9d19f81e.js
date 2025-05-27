@@ -4388,6 +4388,22 @@ function bu(e, t, n, s, r, o) {
         name: "target_action",
         value: d
     }, null, 8, ["checked", "value"]), B("span", pu, We(d), 1)]))), 128))])]), r.form.target_action ? (Y(),
+    // початок
+       B("div", uu, [F(l, {
+        for: "disclosure",
+        value: "\u0412\u0438\u044F\u0432:"
+    }), B("div", fu, [(Y(!0),
+    G(de, null, cn(r.disclosure, (d,p)=>(Y(),
+    G("label", {
+        key: p,
+        class: "flex items-center py-1"
+    }, [F(f, {
+        checked: r.form.disclosure,
+        "onUpdate:checked": t[32] || (t[32] = _=>r.form.disclosure = _),
+        name: "disclosure",
+        value: d
+    }, null, 8, ["checked", "value"]), 
+        // кінець
     G("div", gu, [
     // Поле для введення значення розходу боєприпасів
        
