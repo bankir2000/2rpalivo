@@ -4403,7 +4403,7 @@ function bu(e, t, n, s, r, o) {
         "onUpdate:checked": t[35] || (t[35] = _=>r.form.strichka = _),
         name: "strichka",
         value: d
-    }, null, 8, ["checked", "value"]), 
+    }, null, 8, ["checked", "value"]), B("span", au, We(d), 1)]))), 128))])]), 
         // кінець
     F(l, {
         for: "ammunition_consumption"
