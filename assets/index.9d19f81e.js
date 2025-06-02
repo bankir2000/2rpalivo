@@ -3900,7 +3900,7 @@ const Lc = Io(Tc, [["render", Fc]])
     let mdz = 0;
 
     if (this.form.ammunition_consumption) {
-      const amt = this.form.ammunition_consumption;
+      const amt = Number(this.form.ammunition_consumption);
       total += amt;
       const bzt1 = Math.round(amt / 4);
       const mdz1 = amt - bzt1;
@@ -3909,7 +3909,7 @@ const Lc = Io(Tc, [["render", Fc]])
     }
 
     if (this.form.dva_ammunition_consumption) {
-      const amt = this.form.dva_ammunition_consumption;
+      const amt = Number(this.form.dva_ammunition_consumption);
       total += amt;
       const bzt2 = Math.round(amt / 3);
       const mdz2 = amt - bzt2;
