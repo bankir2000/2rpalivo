@@ -4577,11 +4577,7 @@ F(c, {
     required: ""
 }, null, 8, ["modelValue"]),
 
-// Вивід результату (перевірка обох полів)
-(this.form.other_weapon && this.form.other_weapon_ammo
-    ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
-    : "")
-    // Повідомлення про помилку, якщо воно є
+// Повідомлення про помилку, якщо воно є
     F(a, {
         class: "mt-2",
         message: e.ammunition_consumptionErrorMessage
