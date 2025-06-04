@@ -4542,20 +4542,20 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["modelValue"]),
         // Напис "Інше озброєння", з однаковим компонентом
 F(l, {
-    for: "other_weapon"
+    for: "other_weapon"
 }, "Інше озброєння"),
 // Поле для введення марки озброєння (зберігається в localStorage)
 F("input", {
     id: "other_weapon",
     type: "text",
     class: "mt-1 block w-full",
-    value: r.form.other_weapon,
+    value: localStorage.getItem("other_weapon") || "",
     onInput: e => {
         const val = e.target.value;
-        r.form.other_weapon = val;
         localStorage.setItem("other_weapon", val);
+        r.form.other_weapon = val;
     }
-}),
+}, null, 8, ["modelValue"]),
         
         // Поле для введення значення з коментарем "Іншого озброєння"
     F(l, {
