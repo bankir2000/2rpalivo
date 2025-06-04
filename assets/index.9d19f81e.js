@@ -3947,8 +3947,8 @@ const Lc = Io(Tc, [["render", Fc]])
     ? " Витрати M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. "
     : "") +
   (this.form.description ? " " + this.form.description : "") +
-                    (r.form.other_weapon && r.form.other_weapon_ammo
-    ? " Витрати БК " + r.form.other_weapon + "=" + r.form.other_weapon_ammo + "шт. "
+                    (this.form.other_weapon && this.form.other_weapon_ammo
+    ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
   (this.form.description ? " " + this.form.description : "")
             }
@@ -4544,7 +4544,6 @@ function bu(e, t, n, s, r, o) {
 F(l, {
     for: "other_weapon"
 }, "Інше озброєння"),
-// Поле для введення марки озброєння (зберігається в localStorage)
 // Поле для введення марки озброєння (зберігається в localStorage)
 F("input", {
     id: "other_weapon",
