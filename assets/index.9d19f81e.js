@@ -4536,9 +4536,10 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-        // Напис "Інше озброєння"
-F("label", { class: "mt-1 block w-full" }, "Інше озброєння"),
-
+        // Напис "Інше озброєння", з однаковим компонентом
+F(l, {
+    for: "other_weapon"
+}, "Інше озброєння"),
 // Поле для введення марки озброєння (зберігається в localStorage)
 F("input", {
     id: "other_weapon",
