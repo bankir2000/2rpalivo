@@ -3947,7 +3947,7 @@ const Lc = Io(Tc, [["render", Fc]])
     ? " Витрати M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. "
     : "") +
   (this.form.description ? " " + this.form.description : "") +
-                    (this.form.other_weapon_ammo
+                    (this.form.other_weapon && this.form.other_weapon_ammo
     ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
   (this.form.description ? " " + this.form.description : "")
