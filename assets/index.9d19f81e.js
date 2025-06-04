@@ -4545,30 +4545,42 @@ F(l, {
     for: "other_weapon"
 }, "Інше озброєння"),
 // Поле для введення марки озброєння (зберігається в localStorage)
+// Поле для введення марки озброєння (зберігається в localStorage)
 F("input", {
-    id: "other_weapon",
-    type: "text",
-    class: "mt-1 block w-full",
-    value: localStorage.getItem("other_weapon") || "",
-    onInput: e => {
-        const val = e.target.value;
-        localStorage.setItem("other_weapon", val);
-        r.form.other_weapon = val;
-    }
+    id: "other_weapon",
+    type: "text",
+    class: "mt-1 block w-full",
+    value: localStorage.getItem("other_weapon") || "",
+    onInput: e => {
+        const val = e.target.value;
+        localStorage.setItem("other_weapon", val); // Зберігаємо значення
+        r.form.other_weapon = val; // Оновлюємо реактивний стан
+    }
 }, null, 8, ["modelValue"]),
-        
-        // Поле для введення значення з коментарем "Іншого озброєння"
-    F(l, {
-        for: "other_weapon_ammo"
-    }, "Кільсть БК іншого озброєння"),
-    F(c, {
-        id: "other_weapon_anmo",
-        modelValue: r.form.other_weapon_ammo,
-        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
-        type: "tel",
-        class: "mt-1 block w-full",
-        required: ""
-    }, null, 8, ["modelValue"]),
+
+// Ініціалізація значення після завантаження сторінки
+// (додайте цей код у відповідне місце, де ініціалізується форма)
+if (localStorage.getItem("other_weapon")) {
+    r.form.other_weapon = localStorage.getItem("other_weapon");
+}
+
+// Поле для введення кількості БК
+F(l, {
+    for: "other_weapon_ammo"
+}, "Кількість БК іншого озброєння"),
+F(c, {
+    id: "other_weapon_ammo",
+    modelValue: r.form.other_weapon_ammo,
+    "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
+    type: "tel",
+    class: "mt-1 block w-full",
+    required: ""
+}, null, 8, ["modelValue"]),
+
+// Вивід результату (перевірка обох полів)
+(this.form.other_weapon && this.form.other_weapon_ammo
+    ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
+    : "")
     // Повідомлення про помилку, якщо воно є
     F(a, {
         class: "mt-2",
