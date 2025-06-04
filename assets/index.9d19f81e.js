@@ -4537,7 +4537,7 @@ function bu(e, t, n, s, r, o) {
         required: ""
     }, null, 8, ["modelValue"]),
         // Напис "Інше озброєння"
-F("label", { class: "mt-4 block font-medium" }, "Інше озброєння"),
+F("label", { class: "mt-1 block w-full" }, "Інше озброєння"),
 
 // Поле для введення марки озброєння (зберігається в localStorage)
 F("input", {
@@ -4550,7 +4550,7 @@ F("input", {
         localStorage.setItem("other_weapon", val);
         r.form.other_weapon = val;
     }
-}, null),
+}, null, 8, ["modelValue"]),
         
         // Поле для введення значення з коментарем "Іншого озброєння"
     F(l, {
