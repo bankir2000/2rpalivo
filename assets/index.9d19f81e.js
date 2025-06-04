@@ -4061,7 +4061,7 @@ const Lc = Io(Tc, [["render", Fc]])
             this.form.nearestCity = localStorage.getItem("nearestCity") || null,
             this.form.lat = localStorage.getItem("lat") || null,
             this.form.lng = localStorage.getItem("lng") || null,
-            this.other_weapon: localStorage.getItem("other_weapon") || null
+            this.other_weapon = localStorage.getItem("other_weapon") || null
         },
         roundNearest5(e) {
             return Math.round(e / 5) * 5
