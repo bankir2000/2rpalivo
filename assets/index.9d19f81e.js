@@ -3845,6 +3845,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 browning_ammunition_consumption: null,
                 pkm_ammunition_consumption: null,
                 m75_ammunition_consumption: null,
+                other_weapon_ammo: null,
                 description: null
             },
             flags: {
@@ -3865,6 +3866,7 @@ const Lc = Io(Tc, [["render", Fc]])
             browning_ammunition_consumption: null,
             pkm_ammunition_consumption: null,
             m75_ammunition_consumption: null,
+            other_weapon_ammo: null,
             description: null,
             popupMessage: null,
             now: new Date,
@@ -4521,7 +4523,7 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-        // Поле для введення значення з коментарем "ПКМ-7.62mm"
+        // Поле для введення значення з коментарем "М75-20.0мм"
     F(l, {
         for: "m75_ammunition_consumption"
     }, "M75-20.0mm"),
@@ -4529,6 +4531,18 @@ function bu(e, t, n, s, r, o) {
         id: "m75_ammunition_consumption",
         modelValue: r.form.m75_ammunition_consumption,
         "onUpdate:modelValue": t[31] || (t[31] = d => r.form.m75_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+        // Поле для введення значення з коментарем "Іншого озброєння"
+    F(l, {
+        for: "other_weapon_ammo"
+    }, "Кільсть БК іншого озброєння"),
+    F(c, {
+        id: "other_weapon_anmo",
+        modelValue: r.form.other_weapon_ammo,
+        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
