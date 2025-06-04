@@ -3948,7 +3948,7 @@ const Lc = Io(Tc, [["render", Fc]])
     : "") +
   (this.form.description ? " " + this.form.description : "") +
                     (this.form.other_weapon_ammo
-    ? " Витрати БК" + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
+    ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
   (this.form.description ? " " + this.form.description : "")
             }
@@ -4546,16 +4546,16 @@ F(l, {
 }, "Інше озброєння"),
 // Поле для введення марки озброєння (зберігається в localStorage)
 F("input", {
-    id: "other_weapon",
-    type: "text",
-    class: "mt-1 block w-full",
-    value: localStorage.getItem("other_weapon") || "",
-    onInput: e => {
-        const val = e.target.value;
-        localStorage.setItem("other_weapon", val);
-        r.form.other_weapon = val;
-    }
-}, null, 8, ["modelValue"]),
+    id: "other_weapon",
+    type: "text",
+    class: "mt-1 block w-full",
+    value: r.form.other_weapon,
+    onInput: e => {
+        const val = e.target.value;
+        r.form.other_weapon = val;
+        localStorage.setItem("other_weapon", val);
+    }
+}),
         
         // Поле для введення значення з коментарем "Іншого озброєння"
     F(l, {
