@@ -3845,6 +3845,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 browning_ammunition_consumption: null,
                 pkm_ammunition_consumption: null,
                 m75_ammunition_consumption: null,
+                other_weapon: null,
                 other_weapon_ammo: null,
                 description: null
             },
@@ -4535,6 +4536,22 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
+        // Напис "Інше озброєння"
+F("label", { class: "mt-4 block font-medium" }, "Інше озброєння"),
+
+// Поле для введення марки озброєння (зберігається в localStorage)
+F("input", {
+    id: "other_weapon",
+    type: "text",
+    class: "mt-1 block w-full",
+    value: localStorage.getItem("other_weapon") || "",
+    onInput: e => {
+        const val = e.target.value;
+        localStorage.setItem("other_weapon", val);
+        r.form.other_weapon = val;
+    }
+}, null),
+        
         // Поле для введення значення з коментарем "Іншого озброєння"
     F(l, {
         for: "other_weapon_ammo"
