@@ -3867,6 +3867,7 @@ const Lc = Io(Tc, [["render", Fc]])
             browning_ammunition_consumption: null,
             pkm_ammunition_consumption: null,
             m75_ammunition_consumption: null,
+            other_weapon: null,
             other_weapon_ammo: null,
             description: null,
             popupMessage: null,
@@ -4562,7 +4563,7 @@ F("input", {
         for: "other_weapon_ammo"
     }, "Кільсть БК іншого озброєння"),
     F(c, {
-        id: "other_weapon_anmo",
+        id: "other_weapon_ammo",
         modelValue: r.form.other_weapon_ammo,
         "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
         type: "tel",
