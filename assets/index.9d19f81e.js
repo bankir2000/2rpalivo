@@ -3904,7 +3904,7 @@ const Lc = Io(Tc, [["render", Fc]])
     let total = 0;
     let bzt = 0;
     let mdz = 0;
-    let btd - 0;
+    let btd = 0;
 
     if (this.form.ammunition_consumption) {
       const amt = Number(this.form.ammunition_consumption);
