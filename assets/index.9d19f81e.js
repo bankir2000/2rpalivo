@@ -3904,7 +3904,7 @@ const Lc = Io(Tc, [["render", Fc]])
     let total = 0;
     let bzt = 0;
     let mdz = 0;
-    let btd = 0;
+    let b32 = 0;
 
     if (this.form.ammunition_consumption) {
       const amt = Number(this.form.ammunition_consumption);
@@ -3924,18 +3924,27 @@ const Lc = Io(Tc, [["render", Fc]])
       mdz += mdz2;
     }
       if (this.form.tre_ammunition_consumption) {
-      const amt = Number(this.form.tre_ammunition_consumption);
-      total += amt;
-      const bzt3 = Math.round(amt / 4);
-      const mdz3 = Math.round(amt / 4);
-      const btd1 = Math.round(amt / 4) * 2;
-      bzt += bzt3;
-      mdz += mdz3;
-      btd += btd1
-    }
+  const amt = Number(this.form.tre_ammunition_consumption);
+  total += amt;
+
+  const fullCycles = Math.floor(amt / 4);
+  const remainder = amt % 4;
+
+  let bzt3 = fullCycles;
+  let b32_3 = fullCycles;
+  let mdz3 = fullCycles * 2;
+
+  if (remainder >= 1) bzt3 += 1;
+  if (remainder >= 2) b32_3 += 1;
+  if (remainder === 3) mdz3 += 1;
+
+  bzt += bzt3;
+  b32 += b32_3;
+  mdz += mdz3;
+}
 
     return total > 0
-      ? ` Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт., Б32-${btd}шт.). `
+      ? ` Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт., Б32-${b32}шт.). `
       : "";
   })() +
   (this.form.ak_ammunition_consumption
