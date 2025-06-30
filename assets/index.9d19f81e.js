@@ -4482,7 +4482,7 @@ function bu(e, t, n, s, r, o) {
     // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-3МДЗ"),
+    }, "ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-3МДЗ"),
     F(c, {
         id: "ammunition_consumption",
         modelValue: r.form.ammunition_consumption,
@@ -4494,7 +4494,7 @@ function bu(e, t, n, s, r, o) {
         // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "dva_ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-2МДЗ"),
+    }, "ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-2МДЗ"),
     F(c, {
         id: "dva_ammunition_consumption",
         modelValue: r.form.dva_ammunition_consumption,
@@ -4506,7 +4506,7 @@ function bu(e, t, n, s, r, o) {
         // Поле для введення значення розходу боєприпасів
     F(l, {
         for: "tre_ammunition_consumption"
-    }, "\u0420\u043e\u0437\u0445\u0456\u0434 \u0411\u041a: ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-1Б32-2МДЗ"),
+    }, "ЗУ MR2 VIKTOR 14,5мм, стрічка 1БЗТ-1Б32-2МДЗ"),
     F(c, {
         id: "tre_ammunition_consumption",
         modelValue: r.form.tre_ammunition_consumption,
