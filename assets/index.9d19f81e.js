@@ -4050,7 +4050,7 @@ const Lc = Io(Tc, [["render", Fc]])
       month: "2-digit",
       year: "numeric"
     });
-    this.form.time = `${time}`;
+    this.form.time = `${date} + ' ' + ${time}`;
 },
         getCoordinates() {
             navigator.geolocation ? navigator.geolocation.getCurrentPosition(e=>{
