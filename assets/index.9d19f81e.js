@@ -3892,7 +3892,7 @@ const Lc = Io(Tc, [["render", Fc]])
   (this.form.target_description ? ` ${this.form.target_description}` + " " : "") +
   (this.form.tcil ? " № " + this.form.tcil + ". " : "") +
   (this.form.disclosure ? " " + this.form.disclosure + " " : "") +
-   (this.form.disclosure _pr ? " " + this.form.disclosure_pr + " " : "") +             
+   (this.form.disclosure_pr ? " " + this.form.disclosure_pr + " " : "") +             
   (this.form.number_of_targets ? ` Кількість: ${this.form.number_of_targets}од. ` : "") +
   (() => {
     let coords = [];
@@ -6090,5 +6090,6 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
