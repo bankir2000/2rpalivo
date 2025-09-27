@@ -4456,7 +4456,7 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full"
     }, null, 8, ["modelValue"])]), B("div", uu, [F(l, {
         for: "disclosure",
-        value: Метод виявлення:"
+        value: "Метод виявлення:"
     }), B("div", fu, [(Y(!0),
     G(de, null, cn(r.disclosure, (d,p)=>(Y(),
     G("label", {
@@ -4477,7 +4477,7 @@ function bu(e, t, n, s, r, o) {
         class: "flex items-center py-1"
     }, [F(f, {
         checked: r.form.disclosure,
-        "onUpdate:checked": t[19] || (t[19] = _=>r.form.disclosure = _),
+        "onUpdate:checked": t[35] || (t[35] = _=>r.form.disclosure = _),
         name: "disclosure",
         value: d
     }, null, 8, ["checked", "value"])B("span", au, We(d), 1)]))), 128))])]), B("div", du, [F(l, {
@@ -6090,3 +6090,4 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
