@@ -4471,16 +4471,16 @@ function bu(e, t, n, s, r, o) {
         for: "disclosure_pr",
         value: "Предмет виявлення:"
     }), B("div", fu, [(Y(!0),
-    G(de, null, cn(r.disclosure, (d,p)=>(Y(),
+    G(de, null, cn(r.disclosure_pr, (d,p)=>(Y(),
     G("label", {
         key: p,
         class: "flex items-center py-1"
     }, [F(f, {
-        checked: r.form.disclosure,
-        "onUpdate:checked": t[35] || (t[35] = _=>r.form.disclosure = _),
-        name: "disclosure",
+        checked: r.form.disclosure_pr,
+        "onUpdate:checked": t[35] || (t[35] = _=>r.form.disclosure_pr = _),
+        name: "disclosure_pr",
         value: d
-    }, null, 8, ["checked", "value"])B("span", au, We(d), 1)]))), 128))])]), B("div", du, [F(l, {
+    }, null, 8, ["checked", "value"]), B("span", au, We(d), 1)]))), 128))])]), B("div", du, [F(l, {
         for: "target_action",
         value: "\u041F\u043E\u0432\u0456\u0442\u0440\u044F\u043D\u043E\u0433\u043E \u041F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430:"
     }), B("div", hu, [(Y(!0),
@@ -6090,4 +6090,5 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
