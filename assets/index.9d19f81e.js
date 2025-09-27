@@ -3835,6 +3835,7 @@ const Lc = Io(Tc, [["render", Fc]])
                 targetNearestCity: null,
                 time: null,
                 disclosure: null,
+                disclosure_pr: null,
                 number_of_targets: null,
                 target_action: null,
                 tcil: null,
@@ -3855,9 +3856,10 @@ const Lc = Io(Tc, [["render", Fc]])
                 direction: !1
             },
             watchId: null,
-            targets: ["\u041A\u0440\u0438\u043B\u0430\u0442\u0430 \u0420\u0430\u043A\u0435\u0442\u0430.", "\u041B\u0456\u0442\u0430\u043A \u041C\u0430\u043B\u0438\u0439.", "БпЛА типу Невизначений", "БпЛА типу Зала", "БпЛА типу Орлан", "БпЛА типу Суперкам", "БпЛА типу ШАХЕД", "Зонд", "\u0413\u0435\u043B\u0456\u043A\u043E\u043F\u0442\u0435\u0440.", "\u041A\u0432\u0430\u0434\u0440\u043E\u043A\u043E\u043F\u0442\u0435\u0440.", "\u041B\u0456\u0442\u0430\u043A \u0412\u0435\u043B\u0438\u043A\u0438\u0439.", "\u041F\u043E\u0441\u0442\u0440\u0456\u043B\u0438.", "\u0412\u0438\u0431\u0443\u0445\u0438.", "\u0412\u0438\u0445\u043E\u0434\u0438."],
+            targets: ["\u041A\u0440\u0438\u043B\u0430\u0442\u0430 \u0420\u0430\u043A\u0435\u0442\u0430.", "\u041B\u0456\u0442\u0430\u043A \u041C\u0430\u043B\u0438\u0439.", "БпЛА типу Невизначений", "БпЛА типу Зала", "БпЛА типу Орлан", "БпЛА типу Суперкам", "БпЛА типу Молнія", "БпЛА типу ШАХЕД", "Зонд", "\u0413\u0435\u043B\u0456\u043A\u043E\u043F\u0442\u0435\u0440.", "\u041A\u0432\u0430\u0434\u0440\u043E\u043A\u043E\u043F\u0442\u0435\u0440.", "\u041B\u0456\u0442\u0430\u043A \u0412\u0435\u043B\u0438\u043A\u0438\u0439.", "\u041F\u043E\u0441\u0442\u0440\u0456\u043B\u0438.", "\u0412\u0438\u0431\u0443\u0445\u0438.", "\u0412\u0438\u0445\u043E\u0434\u0438."],
             target_side: ["\u0412\u043E\u0440\u043E\u0436\u0438\u0439.", "\u0421\u0432\u0456\u0439."],
-            disclosure: ["\u0412\u0438\u044f\u0432\u043b\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E \u0442\u0430 \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "Візуально і акустично \u043D\u0435 \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0440\u043E\u0431\u043E\u0442\u0443 \u0441\u0443\u043C\u0456\u0436\u043D\u0438\u0445 \u043F\u0456\u0434\u0440\u043E\u0437\u0434\u0456\u043B\u0456\u0432."],
+            disclosure: ["\u0412\u0438\u044f\u0432\u043b\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E \u0442\u0430 \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "Візуально і акустично \u043D\u0435 \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043E."],
+            disclosure_pr: ["Робота суміжних підрозділів.", "Вибух в небі.", "Вибух на землі."],
             target_action: [" \u0443\u0440\u0430\u0436\u0435\u043D\u043E", " \u043F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u043E", " \u043d\u0435 \u0432\u0440\u0430\u0436\u0435\u043d\u043e"],
             targets_bpla: [" \u0442\u0438\u043f\u0443 \u0417\u0430\u043b\u0430.", " \u0442\u0438\u043f\u0443 \u0421\u0443\u043f\u0435\u0440\u043a\u0430\u043c.", " \u0442\u0438\u043f\u0443 \u0428\u0430\u0445\u0435\u0434.", " \u0442\u0438\u043f\u0443 \u041e\u0440\u043b\u0430\u043d.", " \u0442\u0438\u043f\u0443 \u041b\u0430\u043d\u0446\u0435\u0442.", " \u0442\u0438\u043f \u043d\u0435\u0432\u0438\u0437\u043d\u0430\u0447\u0435\u043d\u043e."],
             tcil: null,
@@ -3890,6 +3892,7 @@ const Lc = Io(Tc, [["render", Fc]])
   (this.form.target_description ? ` ${this.form.target_description}` + " " : "") +
   (this.form.tcil ? " № " + this.form.tcil + ". " : "") +
   (this.form.disclosure ? " " + this.form.disclosure + " " : "") +
+   (this.form.disclosure _pr ? " " + this.form.disclosure_pr + " " : "") +             
   (this.form.number_of_targets ? ` Кількість: ${this.form.number_of_targets}од. ` : "") +
   (() => {
     let coords = [];
@@ -4323,7 +4326,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "tcil",
         modelValue: r.form.tcil,
-        "onUpdate:modelValue": t[27] || (t[27] = d => r.form.tcil = d),
+        "onUpdate:modelValue": t[27] || (t[27] = d => r.form. = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
@@ -4453,7 +4456,7 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full"
     }, null, 8, ["modelValue"])]), B("div", uu, [F(l, {
         for: "disclosure",
-        value: "\u0412\u0438\u044F\u0432:"
+        value: Метод виявлення:"
     }), B("div", fu, [(Y(!0),
     G(de, null, cn(r.disclosure, (d,p)=>(Y(),
     G("label", {
@@ -4464,7 +4467,20 @@ function bu(e, t, n, s, r, o) {
         "onUpdate:checked": t[19] || (t[19] = _=>r.form.disclosure = _),
         name: "disclosure",
         value: d
-    }, null, 8, ["checked", "value"]), B("span", au, We(d), 1)]))), 128))])]), B("div", du, [F(l, {
+    }, null, 8, ["checked", "value"]), B("div", uu, [F(l, {
+        for: "disclosure_pr",
+        value: "Предмет виявлення:"
+    }), B("div", fu, [(Y(!0),
+    G(de, null, cn(r.disclosure, (d,p)=>(Y(),
+    G("label", {
+        key: p,
+        class: "flex items-center py-1"
+    }, [F(f, {
+        checked: r.form.disclosure,
+        "onUpdate:checked": t[19] || (t[19] = _=>r.form.disclosure = _),
+        name: "disclosure",
+        value: d
+    }, null, 8, ["checked", "value"])B("span", au, We(d), 1)]))), 128))])]), B("div", du, [F(l, {
         for: "target_action",
         value: "\u041F\u043E\u0432\u0456\u0442\u0440\u044F\u043D\u043E\u0433\u043E \u041F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0430:"
     }), B("div", hu, [(Y(!0),
@@ -4599,7 +4615,7 @@ F("input", {
     F(c, {
         id: "other_weapon_ammo",
         modelValue: r.form.other_weapon_ammo,
-        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.other_weapon_ammo = d),
+        "onUpdate:modelValue": t[34] || (t[34] = d => r.form.other_weapon_ammo = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
