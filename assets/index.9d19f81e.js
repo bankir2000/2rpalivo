@@ -4620,7 +4620,7 @@ F("input", {
     onInput: e => {
         const val = e.target.value;
         localStorage.setItem("na_bch", val);
-        r.form.other_weapon = val;
+        r.form.na_bch = val;
     }
 }, null, 8, ["modelValue"]),
 
@@ -6093,6 +6093,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
 
