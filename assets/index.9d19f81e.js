@@ -4570,7 +4570,7 @@ function bu(e, t, n, s, r, o) {
     }, "Browning M2-12.7mm"),
     F(c, {
         id: "browning_ammunition_consumption",
-        modelValue: r.form.dbrowning_ammunition_consumption,
+        modelValue: r.form.browning_ammunition_consumption,
         "onUpdate:modelValue": t[29] || (t[29] = d => r.form.browning_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
@@ -6115,6 +6115,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
 
