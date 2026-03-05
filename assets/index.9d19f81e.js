@@ -3996,7 +3996,7 @@ const hasAmmo = parts.length > 0;
 const hasTargetAction = !!this.form.target_action; // Перевіряємо, чи вибрано "знищено/пошкоджено/не знищено"
 
 if (hasAmmo && hasTargetAction && this.form.na_bch) {
-  parts.push(` Екіпаж: ${this.form.na_bch}`);
+  parts.push(` На БЧ: ${this.form.na_bch}`);
 }
 return parts.join(" ");
         signErrorMessage() {
@@ -6115,6 +6115,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
 
