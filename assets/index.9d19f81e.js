@@ -3945,60 +3945,38 @@ const Lc = Io(Tc, [["render", Fc]])
   mdz += mdz3;
 }
 
-    let parts = [];
-
-// MR2
-if (total > 0) {
-  parts.push(
-    `Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт., Б32-${b32}шт.).`
-  );
-}
-
-// АК
-if (this.form.ak_ammunition_consumption) {
-  const ak = this.form.ak_ammunition_consumption;
-  const tz = Math.round(ak / 3);
-  const ps = ak - tz;
-
-  parts.push(
-    `Витрати БК АК74-5.45mm=${ak}шт (в т.ч. ТЗ-${tz}шт., ПС-${ps}шт.).`
-  );
-}
-
-// інша зброя
-if (this.form.dshk_ammunition_consumption) {
-  parts.push(`Витрати БК ДШК-12.7mm=${this.form.dshk_ammunition_consumption}шт.`);
-}
-
-if (this.form.browning_ammunition_consumption) {
-  parts.push(`Витрати БК Browning M2-12.7mm=${this.form.browning_ammunition_consumption}шт.`);
-}
-
-if (this.form.pkm_ammunition_consumption) {
-  parts.push(`Витрати БК ПКМ-7.62mm=${this.form.pkm_ammunition_consumption}шт.`);
-}
-
-if (this.form.m75_ammunition_consumption) {
-  parts.push(`Витрати M75-20.0mm=${this.form.m75_ammunition_consumption}шт.`);
-}
-
-if (this.form.other_weapon && this.form.other_weapon_ammo) {
-  parts.push(`Витрати БК ${this.form.other_weapon}=${this.form.other_weapon_ammo}шт.`);
-}
-
-// опис
-if (this.form.description) {
-  parts.push(this.form.description);
-}
-
-// екіпаж тільки якщо є витрати БК І вибрано target_action
-const hasAmmo = parts.length > 0;
-const hasTargetAction = !!this.form.target_action; // Перевіряємо, чи вибрано "знищено/пошкоджено/не знищено"
-
-if (hasAmmo && hasTargetAction && this.form.na_bch) {
-  parts.push(` На БЧ: ${this.form.na_bch}`);
-}
-return parts.join(" ");
+    return total > 0
+      ? ` Витрати БК ЗУ MR2 VIKTOR 14,5мм=${total}шт. (в т.ч. БЗТ-${bzt}шт., МДЗ-${mdz}шт., Б32-${b32}шт.). `
+      : "";
+  })() +
+  (this.form.ak_ammunition_consumption
+    ? "Витрати БК АК74-5.45mm=" +
+      this.form.ak_ammunition_consumption +
+      "шт (в т.ч. ТЗ-" +
+      Math.round(this.form.ak_ammunition_consumption / 3) +
+      "шт., ПС-" +
+      (this.form.ak_ammunition_consumption -
+        Math.round(this.form.ak_ammunition_consumption / 3)) +
+      "шт.)."
+    : "") +
+  (this.form.dshk_ammunition_consumption
+    ? " Витрати БК ДШК-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.browning_ammunition_consumption
+    ? " Витрати БК Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.pkm_ammunition_consumption
+    ? " Витрати БК ПКМ-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. "
+    : "") +
+  (this.form.m75_ammunition_consumption
+    ? " Витрати M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. "
+    : "") + 
+  (this.form.other_weapon && this.form.other_weapon_ammo
+    ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
+    : "") +
+  (this.form.description ? " " + this.form.description : "") + (this.form.target_action && this.form.na_bch ? "На БЧ: " + this.form.na_bch : "")
+            }
+        },
         signErrorMessage() {
             return this.form.sign && this.form.sign.length > 60 ? "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u043D\u0435 \u0431\u0456\u043B\u044C\u0448\u0435 60 \u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432" : null
         },
@@ -4570,7 +4548,7 @@ function bu(e, t, n, s, r, o) {
     }, "Browning M2-12.7mm"),
     F(c, {
         id: "browning_ammunition_consumption",
-        modelValue: r.form.browning_ammunition_consumption,
+        modelValue: r.form.dbrowning_ammunition_consumption,
         "onUpdate:modelValue": t[29] || (t[29] = d => r.form.browning_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
@@ -6115,10 +6093,6 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
-
-
-
-
 
 
 
