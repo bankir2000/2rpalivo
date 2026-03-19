@@ -4140,6 +4140,7 @@ const Lc = Io(Tc, [["render", Fc]])
             this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng);
         }
     }
+    }
 },
     created() {
         this.loadInputFromLocalStorage(),
