@@ -4434,10 +4434,13 @@ function bu(e, t, n, s, r, o) {
         for: "nearestCity",
         value: "\u041D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442:"
     }), r.form.lat && r.form.lng ? (Y(),
-    G("span", ou, We(r.form.lat) + ", " + We(r.form.lng), 1)) : bt("", !0)]), B("button", {
-        class: "bg-sky-500 rounded text-white px-2 text-sm",
-        onClick: t[14] || (t[14] = d=>o.getCoordinates())
-    }, " \u041E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442 ")]), F(c, {
+    G("span", ou, We(r.form.lat) + ", " + We(r.form.lng), 1)) : bt("", !0)]), 
+    // видаляємо кнопку
+    // B("button", {
+      //  class: "bg-sky-500 rounded text-white px-2 text-sm",
+       // onClick: t[14] || (t[14] = d=>o.getCoordinates())
+   // }, " \u041E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442 ")]),
+    F(c, {
         id: "nearestCity",
         modelValue: r.form.nearestCity,
         "onUpdate:modelValue": t[15] || (t[15] = d=>r.form.nearestCity = d),
