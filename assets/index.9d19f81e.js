@@ -3856,9 +3856,8 @@ const Lc = Io(Tc, [["render", Fc]])
                 direction: !1
             },
             watchId: null,
-            targets: ["БпЛА типу Гербера", "Гелікоптер.", "БпЛА типу Зала", "Зонд", "БпЛА типу Молнія", "Квадрокоптер.", "БпЛА типу Невизначений", "Крилата Ракета.", "БпЛА типу Орлан", "Літак Великий.", "БпЛА типу Суперкам", "Літак Малий.", "БпЛА типу ШАХЕД", "Постріли.", "Вибух.", "Спалах в небі", "Вибух на землі", "FPV-дрон", "Виходи."],
-            target_side: ["\u0412\u043E\u0440\u043E\u0436\u0438\u0439.", "\u0421\u0432\u0456\u0439."],
-            disclosure: ["\u0412\u0438\u044f\u0432\u043b\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E \u0442\u0430 \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "Візуально і акустично \u043D\u0435 \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0440\u043E\u0431\u043E\u0442\u0443 \u0441\u0443\u043C\u0456\u0436\u043D\u0438\u0445 \u043F\u0456\u0434\u0440\u043E\u0437\u0434\u0456\u043B\u0456\u0432."],
+            targets: ["БпЛА типу Гербера", "Гелікоптер.", "БпЛА типу Зала", "Зонд", "БпЛА типу Молнія", "Квадрокоптер.", "БпЛА типу Невизначений", "Крилата Ракета.", "БпЛА типу Орлан", "Літак Великий.", "БпЛА типу Суперкам", "Літак Малий.", "БпЛА типу ШАХЕД", "Постріли.", "Вибух.", "Робота суміжних підрозділів", "Вибух на землі", "Спалах в небі", "Виходи.", "FPV-дрон"],        target_side: ["\u0412\u043E\u0440\u043E\u0436\u0438\u0439.", "\u0421\u0432\u0456\u0439."],
+            disclosure: ["\u0412\u0438\u044f\u0432\u043b\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E \u0442\u0430 \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "Візуально і акустично \u043D\u0435 \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043E."],
             target_action: [" знищено", " \u043F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u043E", " не знищено"],
             targets_bpla: [" \u0442\u0438\u043f\u0443 \u0417\u0430\u043b\u0430.", " \u0442\u0438\u043f\u0443 \u0421\u0443\u043f\u0435\u0440\u043a\u0430\u043c.", " \u0442\u0438\u043f\u0443 \u0428\u0430\u0445\u0435\u0434.", " \u0442\u0438\u043f\u0443 \u041e\u0440\u043b\u0430\u043d.", " \u0442\u0438\u043f\u0443 \u041b\u0430\u043d\u0446\u0435\u0442.", " \u0442\u0438\u043f \u043d\u0435\u0432\u0438\u0437\u043d\u0430\u0447\u0435\u043d\u043e."],
             tcil: null,
@@ -3974,7 +3973,7 @@ const Lc = Io(Tc, [["render", Fc]])
   (this.form.other_weapon && this.form.other_weapon_ammo
     ? " Витрати БК " + this.form.other_weapon + "=" + this.form.other_weapon_ammo + "шт. "
     : "") +
-  (this.form.description ? " " + this.form.description : "") + (this.form.target_action && this.form.na_bch ? "На БЧ: " + this.form.na_bch : "")
+  (this.form.description ? " " + this.form.description : "") + (this.form.target_action && this.form.na_bch ? " На БЧ: " + this.form.na_bch : "")
             }
         },
         signErrorMessage() {
@@ -4062,20 +4061,21 @@ const Lc = Io(Tc, [["render", Fc]])
             ) : (this.popupMessage = "Geolocation is not supported by this browser.",
             this.$refs.popup.showPopup())
         },
-        getNearestCity(e, t) {
-            if (!e || !t)
-                return;
-            const n = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${e},${t}&key=${this.googleMapsApiKey}&region=UA&language=uk`;
-            return fetch(n).then(s=>s.json()).then(s=>{
-                const r = s.results[0].address_components.find(o=>o.types[0] === "plus_code");
-                return r ? s.results[0].formatted_address.replace(r.long_name, "").trim() : s.results[0].formatted_address
-            }
-            ).catch(()=>{
-                this.popupMessage = "\u041F\u043E\u043C\u0438\u043B\u043A\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043D\u0430\u0437\u0432\u0438 \u043C\u0456\u0441\u0442\u0430",
-                this.$refs.popup.showPopup()
-            }
-            )
-        },
+        // Прибрав кнопку отримати насенений пункт
+        // getNearestCity(e, t) {
+           // if (!e || !t)
+                // return;
+           // const n = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${e},${t}&key=${this.googleMapsApiKey}&region=UA&language=uk`;
+          //  return fetch(n).then(s=>s.json()).then(s=>{
+               // const r = s.results[0].address_components.find(o=>o.types[0] === "plus_code");
+               // return r ? s.results[0].formatted_address.replace(r.long_name, "").trim() : s.results[0].formatted_address
+           // }
+          //  ).catch(()=>{
+          //      this.popupMessage = "\u041F\u043E\u043C\u0438\u043B\u043A\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043D\u0430\u0437\u0432\u0438 \u043C\u0456\u0441\u0442\u0430",
+           //     this.$refs.popup.showPopup()
+           // }
+         //   )
+       // },
         isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         },
@@ -4131,12 +4131,16 @@ const Lc = Io(Tc, [["render", Fc]])
         "form.lat": function(e) {
             localStorage.setItem("lat", e)
         },
-        "form.lng": {
-            async handler(e) {
-                localStorage.setItem("lng", e),
-                this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
-            }
-        }
+        // заміна fotm.lng
+        // "form.lng": {
+          //  async handler(e) {
+               // localStorage.setItem("lng", e),
+              //  this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
+           // }
+       // }
+     "form.lng": function(e) {
+    localStorage.setItem("lng", e)
+}   
     },
     created() {
         this.loadInputFromLocalStorage(),
@@ -6093,6 +6097,7 @@ const Is = yc(vu);
 Is.use(Ec());
 Is.use(Pf);
 Is.mount("#app");
+
 
 
 
