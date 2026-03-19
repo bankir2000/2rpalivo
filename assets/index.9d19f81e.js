@@ -4133,9 +4133,11 @@ const Lc = Io(Tc, [["render", Fc]])
         localStorage.setItem("lat", e)
     },
     "form.lng": {
-        async handler(e) {
-            localStorage.setItem("lng", e),
-            this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
+    async handler(e) {
+        localStorage.setItem("lng", e);
+        // Оновлюємо nearestCity ТІЛЬКИ якщо воно ще не заповнене
+        if (!this.form.nearestCity && this.form.lat) {
+            this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng);
         }
     }
 },
