@@ -4061,21 +4061,22 @@ const Lc = Io(Tc, [["render", Fc]])
             ) : (this.popupMessage = "Geolocation is not supported by this browser.",
             this.$refs.popup.showPopup())
         },
-        // Прибрав кнопку отримати насенений пункт
-        // getNearestCity(e, t) {
-           // if (!e || !t)
-                // return;
-           // const n = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${e},${t}&key=${this.googleMapsApiKey}&region=UA&language=uk`;
-          //  return fetch(n).then(s=>s.json()).then(s=>{
-               // const r = s.results[0].address_components.find(o=>o.types[0] === "plus_code");
-               // return r ? s.results[0].formatted_address.replace(r.long_name, "").trim() : s.results[0].formatted_address
-           // }
-          //  ).catch(()=>{
-          //      this.popupMessage = "\u041F\u043E\u043C\u0438\u043B\u043A\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043D\u0430\u0437\u0432\u0438 \u043C\u0456\u0441\u0442\u0430",
-           //     this.$refs.popup.showPopup()
-           // }
-         //   )
-       // },
+        getNearestCity(e, t) {
+    if (!e || !t)
+        return;
+    return fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${e}&lon=${t}&accept-language=uk`)
+        .then(s => s.json())
+        .then(s => {
+            if (s.address) {
+                return s.address.city || s.address.town || s.address.village || s.address.county || s.display_name;
+            }
+            return null;
+        })
+        .catch(() => {
+            this.popupMessage = "\u041F\u043E\u043C\u0438\u043B\u043A\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043D\u0430\u0437\u0432\u0438 \u043C\u0456\u0441\u0442\u0430",
+            this.$refs.popup.showPopup()
+        })
+},
         isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         },
@@ -4131,16 +4132,12 @@ const Lc = Io(Tc, [["render", Fc]])
         "form.lat": function(e) {
             localStorage.setItem("lat", e)
         },
-        // заміна fotm.lng
-        // "form.lng": {
-          //  async handler(e) {
-               // localStorage.setItem("lng", e),
-              //  this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
-           // }
-       // }
-     "form.lng": function(e) {
-    localStorage.setItem("lng", e)
-}   
+        "form.lng": {
+            async handler(e) {
+                localStorage.setItem("lng", e),
+                this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
+            }
+        }
     },
     created() {
         this.loadInputFromLocalStorage(),
@@ -4434,13 +4431,10 @@ function bu(e, t, n, s, r, o) {
         for: "nearestCity",
         value: "\u041D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442:"
     }), r.form.lat && r.form.lng ? (Y(),
-    G("span", ou, We(r.form.lat) + ", " + We(r.form.lng), 1)) : bt("", !0)]), 
-    // видаляємо кнопку
-    // B("button", {
-      //  class: "bg-sky-500 rounded text-white px-2 text-sm",
-       // onClick: t[14] || (t[14] = d=>o.getCoordinates())
-   // }, " \u041E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442 ")]),
-    F(c, {
+    G("span", ou, We(r.form.lat) + ", " + We(r.form.lng), 1)) : bt("", !0)]), B("button", {
+        class: "bg-sky-500 rounded text-white px-2 text-sm",
+        onClick: t[14] || (t[14] = d=>o.getCoordinates())
+    }, " \u041E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442 ")]), F(c, {
         id: "nearestCity",
         modelValue: r.form.nearestCity,
         "onUpdate:modelValue": t[15] || (t[15] = d=>r.form.nearestCity = d),
@@ -4609,7 +4603,7 @@ F("input", {
     F(c, {
         id: "other_weapon_ammo",
         modelValue: r.form.other_weapon_ammo,
-        "onUpdate:modelValue": t[14] || (t[14] = d => r.form.other_weapon_ammo = d),
+        "onUpdate:modelValue": t[34] || (t[34] = d => r.form.other_weapon_ammo = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
