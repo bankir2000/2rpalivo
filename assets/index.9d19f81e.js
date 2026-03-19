@@ -4123,22 +4123,22 @@ const Lc = Io(Tc, [["render", Fc]])
         }
     },
     watch: {
-        "form.sign": function(e) {
-            localStorage.setItem("Sign", e)
-        },
-        "form.nearestCity": function(e) {
-            localStorage.setItem("nearestCity", e)
-        },
-        "form.lat": function(e) {
-            localStorage.setItem("lat", e)
-        },
-        "form.lng": {
-            async handler(e) {
-                localStorage.setItem("lng", e),
-                this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
-            }
-        }
+    "form.sign": function(e) {
+        localStorage.setItem("Sign", e)
     },
+    "form.nearestCity": function(e) {
+        localStorage.setItem("nearestCity", e)
+    },
+    "form.lat": function(e) {
+        localStorage.setItem("lat", e)
+    },
+    "form.lng": {
+        async handler(e) {
+            localStorage.setItem("lng", e),
+            this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng)
+        }
+    }
+},
     created() {
         this.loadInputFromLocalStorage(),
         this.getCurrentTime()
