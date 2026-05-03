@@ -3819,7 +3819,7 @@ const Lc = Io(Tc, [["render", Fc]])
     },
     data() {
         return {
-            googleMapsApiKey: "AIzaSyC2kV5-JBHiQDER92r6epALoEKbHvQ40SM",
+            
             form: {
                 sign: null,
                 target: null,
@@ -3829,10 +3829,8 @@ const Lc = Io(Tc, [["render", Fc]])
                 distance: null,
                 azimuth: null,
                 direction: null,
-                lat: null,
-                lng: null,
                 nearestCity: null,
-                targetNearestCity: null,
+                
                 time: null,
                 disclosure: null,
                 number_of_targets: null,
@@ -3858,7 +3856,7 @@ const Lc = Io(Tc, [["render", Fc]])
             watchId: null,
             targets: ["БпЛА типу Гербера", "Гелікоптер.", "БпЛА типу Зала", "Зонд", "БпЛА типу Молнія", "Квадрокоптер.", "БпЛА типу Невизначений", "Крилата Ракета.", "БпЛА типу Орлан", "Літак Великий.", "БпЛА типу реактивний Шахед", "Літак Малий.", "БпЛА типу Суперкам", "Постріли.", "БпЛА типу ШАХЕД", "Робота суміжних підрозділів", "Вибух.", "Спалах в небі", "Вибух на землі", "FPV-дрон", "Виходи."],
             disclosure: ["\u0412\u0438\u044f\u0432\u043b\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0430\u043A\u0443\u0441\u0442\u0438\u0447\u043D\u043E \u0442\u0430 \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "\u0412\u0438\u044F\u0432\u043B\u0435\u043D\u043E \u0432\u0456\u0437\u0443\u0430\u043B\u044C\u043D\u043E.", "Візуально і акустично \u043D\u0435 \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043E."],
-            target_action: [" знищено", " \u043F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u043E", " не знищено"],
+            target_action: [" знищено", " уражено", " не знищено"],
             targets_bpla: [" \u0442\u0438\u043f\u0443 \u0417\u0430\u043b\u0430.", " \u0442\u0438\u043f\u0443 \u0421\u0443\u043f\u0435\u0440\u043a\u0430\u043c.", " \u0442\u0438\u043f\u0443 \u0428\u0430\u0445\u0435\u0434.", " \u0442\u0438\u043f\u0443 \u041e\u0440\u043b\u0430\u043d.", " \u0442\u0438\u043f\u0443 \u041b\u0430\u043d\u0446\u0435\u0442.", " \u0442\u0438\u043f \u043d\u0435\u0432\u0438\u0437\u043d\u0430\u0447\u0435\u043d\u043e."],
             tcil: null,
             ammunition_consumption: null,
@@ -3997,15 +3995,7 @@ const Lc = Io(Tc, [["render", Fc]])
         directionErrorMessage() {
             return this.form.direction && isNaN(parseInt(this.form.direction)) || parseInt(this.form.direction) > 360 || parseInt(this.form.direction) < 0 ? "\u0412\u0432\u0435\u0434\u0456\u0442\u044C \u0447\u0438\u0441\u043B\u043E \u0432\u0456\u0434 0 \u0434\u043E 360" : null
         },
-        targetNearestCityErrorMessage() {
-            return this.form.azimuth ? this.form.distance ? !this.form.lat && !this.form.lng ? "\u041D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E \u0432\u0438\u0437\u043D\u0430\u0447\u0438\u0442\u0438 \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442\u0438 \u0446\u0456\u043B\u0456 \u0431\u0435\u0437 \u0432\u043A\u0430\u0437\u0430\u043D\u043D\u044F \u043A\u043E\u043E\u0440\u0434\u0438\u043D\u0430\u0442 \u0432\u043B\u0430\u0441\u043D\u043E\u0457 \u043F\u043E\u0437\u0438\u0446\u0456\u0457" : null : "\u041D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E \u0432\u0438\u0437\u043D\u0430\u0447\u0438\u0442\u0438 \u043D\u0430\u0439\u0431\u043B\u0438\u0436\u0447\u0435 \u043C\u0456\u0441\u0442\u043E \u0431\u0435\u0437 \u0432\u043A\u0430\u0437\u0430\u043D\u043D\u044F \u0434\u0430\u043B\u044C\u043D\u043E\u0441\u0442\u0456" : "\u041D\u0435\u043C\u043E\u0436\u043B\u0438\u0432\u043E \u0432\u0438\u0437\u043D\u0430\u0447\u0438\u0442\u0438 \u043D\u0430\u0439\u0431\u043B\u0438\u0436\u0447\u0435 \u043C\u0456\u0441\u0442\u043E \u0431\u0435\u0437 \u0432\u043A\u0430\u0437\u0430\u043D\u043D\u044F \u0430\u0437\u0438\u043C\u0443\u0442\u0443"
-        },
-        calculateTargetCoordinates() {
-            if (!this.form.azimuth || !this.form.distance || !this.form.lat || !this.form.lng)
-                return {
-                    lat: NaN,
-                    lng: NaN
-                };
+        calculateTar;
             const e = 6371e3
               , t = parseInt(this.form.azimuth) * Math.PI / 180
               , n = parseInt(this.form.distance) / e
@@ -4053,38 +4043,17 @@ const Lc = Io(Tc, [["render", Fc]])
     });
     this.form.time = `${date} ${time}`;
 },
-        getCoordinates() {
-            navigator.geolocation ? navigator.geolocation.getCurrentPosition(e=>{
-                this.form.lat = e.coords.latitude,
-                this.form.lng = e.coords.longitude
-            }
             ) : (this.popupMessage = "Geolocation is not supported by this browser.",
             this.$refs.popup.showPopup())
-        },
-        getNearestCity(e, t) {
-    if (!e || !t)
-        return;
-    return fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${e}&lon=${t}&accept-language=uk`)
-        .then(s => s.json())
-        .then(s => {
-            if (s.address) {
-                return s.address.city || s.address.town || s.address.village || s.address.county || s.display_name;
-            }
-            return null;
-        })
-        .catch(() => {
-            this.popupMessage = "\u041F\u043E\u043C\u0438\u043B\u043A\u0430 \u043E\u0442\u0440\u0438\u043C\u0430\u043D\u043D\u044F \u043D\u0430\u0437\u0432\u0438 \u043C\u0456\u0441\u0442\u0430",
-            this.$refs.popup.showPopup()
-        })
-},
+        },,
         isMobile() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
         },
         loadInputFromLocalStorage() {
             this.form.sign = localStorage.getItem("Sign") || null,
-            this.form.nearestCity = localStorage.getItem("nearestCity") || null,
-            this.form.lat = localStorage.getItem("lat") || null,
-            this.form.lng = localStorage.getItem("lng") || null,
+            
+            
+            
             this.form.other_weapon = localStorage.getItem("other_weapon") || null,
             this.form.na_bch = localStorage.getItem("na_bch") || null
         },
@@ -4123,25 +4092,13 @@ const Lc = Io(Tc, [["render", Fc]])
         }
     },
     watch: {
-    "form.sign": function(e) {
-        localStorage.setItem("Sign", e)
+        "form.sign": function(e) {
+            localStorage.setItem("Sign", e)
+        },
+        
+        
+        
     },
-    "form.nearestCity": function(e) {
-        localStorage.setItem("nearestCity", e)
-    },
-    "form.lat": function(e) {
-        localStorage.setItem("lat", e)
-    },
-    "form.lng": {
-    async handler(e) {
-        localStorage.setItem("lng", e);
-        // Оновлюємо nearestCity ТІЛЬКИ якщо воно ще не заповнене
-        if (!this.form.nearestCity && this.form.lat) {
-            this.form.nearestCity = await this.getNearestCity(this.form.lat, this.form.lng);
-        }
-    }
-    }
-},
     created() {
         this.loadInputFromLocalStorage(),
         this.getCurrentTime()
@@ -4433,11 +4390,7 @@ function bu(e, t, n, s, r, o) {
     }, null, 8, ["message"])]), B("div", su, [B("div", ru, [B("div", null, [F(l, {
         for: "nearestCity",
         value: "\u041D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442:"
-    }), r.form.lat && r.form.lng ? (Y(),
-    G("span", ou, We(r.form.lat) + ", " + We(r.form.lng), 1)) : bt("", !0)]), B("button", {
-        class: "bg-sky-500 rounded text-white px-2 text-sm",
-        onClick: t[14] || (t[14] = d=>o.getCoordinates())
-    }, " \u041E\u0442\u0440\u0438\u043C\u0430\u0442\u0438 \u043D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0439 \u043F\u0443\u043D\u043A\u0442 ")]), F(c, {
+    }), bt("", !0)]), F(c, {
         id: "nearestCity",
         modelValue: r.form.nearestCity,
         "onUpdate:modelValue": t[15] || (t[15] = d=>r.form.nearestCity = d),

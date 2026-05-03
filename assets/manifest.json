@@ -1,7 +1,7 @@
 {
-  "name": "PPO",
-  "short_name": "PPO",
-  "start_url": "/2rpalivo/",
+  "name": "ППО СМС",
+  "short_name": "ППО СМС",
+  "start_url": "/ppo/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
